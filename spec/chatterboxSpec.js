@@ -60,6 +60,7 @@ describe('chatterbox', function() {
       it('should submit a GET request via $.ajax', function(done){
         app.fetch();
         expect($.ajax.calledOnce).to.be.true;
+        console.warn(app);
         ajaxUrl = typeof $.ajax.args[0][0] === 'string' ? $.ajax.args[0][0] : $.ajax.args[0][0].url;
         expect(ajaxUrl).to.equal(app.server);
         done();
@@ -119,7 +120,7 @@ describe('chatterbox', function() {
 
         app.init();
 
-        $('#send .submit').trigger('submit');
+        $('.submit').trigger('submit');
         expect(app.handleSubmit.calledOnce).to.be.true;
 
         app.handleSubmit.restore();

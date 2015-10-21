@@ -16,8 +16,42 @@
 
   <body>
     <div id="main">
+
       <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
+      <ul id="chats"></ul>
+
+      <!-- <form> -->
+        <select id="roomSelect"></select>
+        <input id="newRoomName" autocomplete="off" />
+      <!-- </form> -->
+
+      <!-- <form class="submit"> -->
+        <input id="message" autocomplete="off" />
+      <!-- </form> -->
+
+      <div class="chatroom" id="lobby"></div>
+
+      <script>
+
+        $('#message').keyup(function(e) {
+          e.preventDefault();
+          if( e.keyCode === 13 ){
+            console.warn('YOU\'VE SUBMITTED A MESSAGE!')
+            app.handleSubmit( $('#message').val());
+            $('#message').val('')
+          }
+        });
+
+        $('#newRoomName').keyup(function(e) {
+          e.preventDefault();
+          if( e.keyCode === 13 ){
+            app.user.room = $('#newRoomName').val();
+            app.addRoom($('#newRoomName').val());
+            $('#newRoomName').val('')
+          }
+        });
+    
+      </script>
     </div>
   </body>
 </html>
