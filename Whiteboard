@@ -1,0 +1,22 @@
+DONE Allow users to create rooms and enter existing rooms
+
+2. Allow users to 'befriend' other users by clicking on their username
+
+3. Display all messages sent by friends in bold
+
+4. Complete the Backbone intro (you have access to this repo on GitHub)
+
+
+************
+
+PROBLEM: Allow users to 'befriend' other users by clicking on their username
+         Display all messages sent by friends in bold
+
+OVERVIEW:
+
+1. When clicking on a username, that username gets added to user.friends
+2. Change addMessage to select messages from friends and bold them
+
+
+PSEUDO-CODE:
+
